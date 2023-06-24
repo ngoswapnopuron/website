@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* text-decoration: none; */
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        a {
+          text-decoration: none;
+        }
+        
+        p {
+          font-weight: 300;
+          color: #111;
+        }
+
+        section {
+          padding: 80px;
+        }
+
+        .titeText {
+          color: #111;
+          font-size: 2em;
+          font-weight: 300;
+        }
+        
+        .titeText span {
+          color: #c98e50;
+          font-weight: 700;
+          font-size: 1.5em;
+        }
+        
+        .abtimg {
+          margin: 0 100px;
+        }
+        
+        .imgbx {
+          position: relative;
+          width: 100%;
+          min-height: 300px;
+        }
+        
+        .imgbx img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20%;
+          height: 80%;
+          object-fit: cover;
+        }
+        
+        .title {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        /* ================== Navbar starts ====================== */
+
+        header {
+
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0px;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: .5s;
+          }
+
+        .wrapper {
+            background: #171c24;
+            position: fixed;
+            width: 100%;
+        }
+
+        .wrapper nav {
+            position: relative;
+            display: flex;
+            max-width: calc(100% - 200px);
+            margin: 0 auto;
+            height: 70px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .content {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .content .links {
+            margin-left: 80px;
+            display: flex;
+        }
+
+        .content .logo a {
+            color: #fff;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .content .links li {
+            list-style: none;
+            line-height: 70px;
+        }
+
+        .content .links li a,
+        .content .links li label {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 9px 17px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .content .links li label {
+            display: none;
+        }
+
+        .content .links li a:hover,
+        .content .links li label:hover {
+            background: #323c4e;
+        }
+
+        .wrapper .search-icon,
+        .wrapper .menu-icon {
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 70px;
+            width: 70px;
+            text-align: center;
+        }
+
+        .wrapper .menu-icon {
+            display: none;
+        }
+
+        .wrapper #show-search:checked~.search-icon i::before {
+            content: "\f00d";
+        }
+
+        .wrapper .search-box {
+            position: absolute;
+            height: 100%;
+            max-width: calc(100% - 50px);
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .wrapper #show-search:checked~.search-box {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 17px;
+            color: #fff;
+            background: #171c24;
+            padding: 0 100px 0 15px;
+        }
+
+        .search-box input::placeholder {
+            color: #f2f2f2;
+        }
+
+        .search-box .go-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 60px;
+            width: 70px;
+            background: #171c24;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .wrapper input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Dropdown Menu code start */
+        .content .links ul {
+            position: absolute;
+            background: #171c24;
+            top: 80px;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .content .links li:hover>ul {
+            top: 70px;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+        }
+
+        .content .links ul li a {
+            display: block;
+            width: 100%;
+            line-height: 30px;
+            border-radius: 0px !important;
+        }
+
+        .content .links ul ul {
+            position: absolute;
+            top: 0;
+            right: calc(-100% + 8px);
+        }
+
+        .content .links ul li {
+            position: relative;
+        }
+
+        .content .links ul li:hover ul {
+            top: 0;
+        }
+
+/* =================== Navbar ends ========================== */
+
+  /* ============== Home Page starts ============================== */
+  .banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40));
+    /* url(https://i.postimg.cc/s29LNR86/bg.jpg); */
+    background-size: cover;
+  }
+  
+  .banner .content {
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  .banner .content h2 {
+    font-size: 5em;
+    color: #fff;
+  }
+  
+  .banner .content p {
+    font-size: 1em;
+    color: #fff;
+  }
+  
+  .btn {
+    font-size: 1.5em;
+    color: #fff;
+    background: #d0ff01;
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: .5s;
+  }
+  
+  .btn:hover {
+    letter-spacing: 5px;
+  }
+  /* ============ home page ends ==========================*/
+  
+
+
+  /* ======================= About page starts ========================== */
+  .responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: flex-start;
+  }
+  
+  .text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    line-height: 25px;
+  }
+  
+  .responsive-container-block.bigContainer {
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mainImg {
+    color: black;
+    width: 55%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px 7px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .text-blk.headingText {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 34px;
+    color: rgb(51, 51, 51);
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  
+  .allText {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    width: 40%;
+    margin: 0 0 0 0;
+  }
+  
+  .text-blk.subHeadingText {
+    color: rgb(102, 102, 102);
+    font-size: 25px;
+    line-height: 34px;
+    font-weight: 700;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+  }
+  
+  .text-blk.description {
+    font-size: 25px;
+    line-height: 34px;
+    color: rgb(102, 102, 102);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+  }
+
+  /* Try uncommenting this if not done properly */
+
+  /* .responsive-container-block.Container.bottomContainer {
+    margin-top: 100px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    flex-direction: row-reverse;
+    margin: 100px auto 50px auto;
+  }
+  
+  .allText.aboveText {
+    margin: 0 0 0 40px;
+  }
+  
+  .allText.bottomText {
+    margin: 0 40px 0 0;
+  }
+
+  .responsive-container-block.Container {
+    margin-top: 80px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 1320px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  } */
+
+
+  /* ================= About Page ends ======================== */
+
+
+  /* ==================== Our Mission Starts ===================== */
+  /* .Missions .card-container {
+    /* padding: 10px; 
+    display: inline-block;
+    height: 100%;
+    /* box-shadow: #000; 
+}
+
+.Missions .card {
+    /* padding: 0 150px ; 
+    margin: 0 10px;
+    width: 300px;
+    height: 200px;
+    margin-right: 70px;
+    margin-left:  70px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.Missions .card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.Missions .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.Missions .text-body {
+    color: rgb(134, 134, 134);
+}
+
+/*Text
+.Missions .text-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/*Hover
+.Missions .card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.Missions .card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+} */
+
+
+.card-container {
+  padding: 10px;
+  display: inline-flex;
+  height: 100%;
+  /* box-shadow: #000; */
+}
+
+.card {
+  /* padding: 0 150px ; */
+  margin: 0 10px;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.text-body {
+  color: rgb(134, 134, 134);
+}
+
+/*Text*/
+.text-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/*Hover*/
+.card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+/* ========================= Our Mission ends ======================= */
+
+
+/* ======================== Our Branches starts ===================== */
+
+.brnc {
+  display: inline-block;
+}
+.book {
+  margin: 0 70px;
+  position: relative;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+/* ============================= Our branches ends ======================= */
+
+/* ============================== Footer starts ============================ */
+
+/* .foot {
+  margin-top: 50px;
+} */
+
+.footer {
+  margin-top: 50px;
+  background: #ff8d01;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer p {
+  color: #fff;
+  font-weight: 300;
+}
+
+.footer .icons a {
+  color: #fff;
+}
+
+/* ============================== Footer ends ============================ */
